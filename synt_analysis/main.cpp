@@ -1,17 +1,20 @@
 #include<iostream>
 #include<string>
 #include<fstream>
+#include<vector>
+
 #include"element.h"
 #include"hash_table.h"
-#include"func.h"
 #include"dka.h"
+#include"func.h"
 #include"syntax.h"
-#include"analysis.h"
 #include"tree.h"
-#include"incident.h"
+#include"analysis.h"
+
 using namespace std;
 
 int main() {
+
 	syntax_anal prog("input.txt");
 	int status = prog.program();
 	if (status != OK) {

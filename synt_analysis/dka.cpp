@@ -14,7 +14,7 @@ int Node::get_next(char a) {
 		return nodes[0];
 	else if ((int)a >= 65 && (int)a <= 90 || (int)a >= 97 && (int)a <= 122) // буквы
 		return nodes[1];
-	else if ((int)a == 44) // ,
+	else if ((int)a == 46) // .
 		return nodes[2];
 	else
 		return -1;

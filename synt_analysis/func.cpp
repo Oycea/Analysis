@@ -1,9 +1,9 @@
 #include"func.h"
 using namespace std;
 
-vector<char> operators = { '+', '-', '=', '(', ')' };
+vector<char> operators = { '+', '-', '=', '(', ')', ',' };
 vector<char> space = { ' ' };
-vector<string> key_words = { "PROGRAM", "END", "INTEGER", " COMPLEX", "CMPLX", "CABS" };
+vector<string> key_words = { "PROGRAM", "END", "INTEGER", "COMPLEX", "CMPLX", "CABS" };
 
 Checker check;
 

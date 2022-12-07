@@ -4,8 +4,9 @@
 #include<iostream>
 #include<string>
 #include<vector>
-#include"hash_table.h"
+
 #include"element.h"
+#include"hash_table.h"
 #include"dka.h"
 using namespace std;
 

@@ -1,14 +1,14 @@
 #ifndef ANALYSIS_H
 #define ANALYSIS_H
+
+#include "hash_table.h"
+#include "syntax.h"
+#include "dka.h"
 #include <string>
 #include <iostream>
 #include <fstream>
-#include "hash_table.h"
-#include "syntax.h"
-#include "incident.h"
-#include "dka.h"
 #include "tree.h"
-#include "element.h"
+#include "Element.h"
 
 class syntax_anal {
 public:
@@ -57,7 +57,7 @@ private:
         }
         if (lexem == LPAREN) {
             //избежание случаев когда перед скобкой стоят числа или перменные
-            if (pref == INTDIG || pref == REAL || pref == ID)
+            if (pref == INTDIG || pref == COMPLEX || pref == ID)
                 return EXPECTED_SEPARATOR;
             if (pref != CABS && pref != ITOR) {
                 _son = _son->add(_son, EXPR);
@@ -167,7 +167,7 @@ private:
         if (lexem == LEX_ERR)
             return LEX_ERR;
         if (lexem == ID) {
-            if (_pref == APPERAND || _pref == INTEGER || _pref == REAL) {
+            if (_pref == APPERAND || _pref == INTEGER || _pref == COMPLEX) {
                 _son = _son->add(_son, VAR_LIST);
                 _pref = lexem;
                 _son = _son->add(_son, ID);
@@ -179,7 +179,7 @@ private:
             }
         }
         if (lexem == APPERAND) {
-            if (_pref == APPERAND || _pref == INTEGER || _pref == REAL) {
+            if (_pref == APPERAND || _pref == INTEGER || _pref == COMPLEX) {
                 return EXPECTED_IDENTIFIER;
             }
             else if (_pref == ID) {
@@ -192,7 +192,7 @@ private:
             || lexem == LPAREN) {
             return UNRECOGNIZED_STATEMENT;
         }
-        if (lexem == REAL || lexem == INTEGER) {
+        if (lexem == COMPLEX || lexem == INTEGER) {
             _pref = lexem;
             _son = _description->add(_description, DESCRIPTION);
             _description = _son;
@@ -237,7 +237,7 @@ public:
         lexem = get_lexem(stream, gg, gg_2, _lexem);
         if (lexem == LEX_ERR)
             return LEX_ERR;
-        if (lexem != INTEGER && lexem != REAL) {
+        if (lexem != INTEGER && lexem != COMPLEX) {
             return EXPECTED_DESCRIPTION;
         }
         else {

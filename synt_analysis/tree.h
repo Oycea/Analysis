@@ -4,7 +4,7 @@
 #include <vector>
 #include <string>
 #include "Element.h"
-#include "incident.h"
+#include "syntax.h"
 using namespace std;
 
 class node {

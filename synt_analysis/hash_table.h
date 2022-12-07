@@ -5,7 +5,9 @@
 #include<string>
 #include<vector>
 #include<fstream>
+
 #include"element.h"
+
 using namespace std;
 
 class Hash_table {
