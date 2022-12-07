@@ -1,0 +1,6 @@
+PROGRAM f
+COMPLEX b , a , n
+b = 1 + 2
+a = ( 1,59 )
+n = 3 + ( 2 + 1 )
+END f

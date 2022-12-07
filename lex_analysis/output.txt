@@ -1,0 +1,42 @@
+table[40] --> separator --> (
+
+table[41] --> separator --> )
+
+table[43] --> separator --> +
+
+table[44] --> not_determinated --> ,
+
+table[49] --> intNum --> 1
+
+table[50] --> intNum --> 2
+
+table[51] --> intNum --> 3
+
+table[52] --> intNum --> 4
+
+table[61] --> separator --> =
+
+table[63] --> not_determinated --> ?
+
+table[97] --> id --> a
+
+table[98] --> id --> b
+
+table[102] --> id --> f
+
+table[109] --> id --> m
+
+table[110] --> id --> n
+
+table[310] --> not_determinated --> a1
+
+table[352] --> keyword --> CMPLX
+
+table[529] --> not_determinated --> PROGRA1M
+
+table[606] --> keyword --> INTEGER
+
+table[743] --> keyword --> END
+
+table[835] --> complexNum --> 1,59
+

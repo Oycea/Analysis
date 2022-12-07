@@ -1,0 +1,11 @@
+PROGRA1M f
+INTEGER b
+b = 1 + 2
+INTEGER a
+a = (1,59)
+INTEGER a1
+?
+INTEGER n
+n = 3 + ( 2 + 1 )
+END m
+CMPLX(3 , 4)
