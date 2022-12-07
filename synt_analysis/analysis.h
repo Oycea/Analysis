@@ -37,7 +37,7 @@ private:
         //чтоб не начать разбирать новую строку раньше времени
         if (lexem == END) {
             //не может кончаться на плюс или минус
-            if (pref == PLUS || pref == MINUS || pref == ITOR || pref == CABS)
+            if (pref == PLUS || pref == MINUS || pref == CMPLX || pref == CABS)
                 return UNRECOGNIZED_STATEMENT;
             pref = lexem;
             return OK;
@@ -59,7 +59,7 @@ private:
             //избежание случаев когда перед скобкой стоят числа или перменные
             if (pref == INTDIG || pref == COMPLEX || pref == ID)
                 return EXPECTED_SEPARATOR;
-            if (pref != CABS && pref != ITOR) {
+            if (pref != CABS && pref != CMPLX) {
                 _son = _son->add(_son, EXPR);
                 _son = _son->add(_son, SEXPR);
             }
@@ -95,7 +95,7 @@ private:
                 if (flag_lparen == 0)
                     return SUP_RPAREN;
             }
-            else if (lexem == REALDIG || lexem == INTDIG || lexem == CABS || lexem == ITOR)
+            else if (lexem == REALDIG || lexem == INTDIG || lexem == CABS || lexem == CMPLX)
                 return UNRECOGNIZED_STATEMENT;
             else if (lexem == ID && flag_lparen == flag_rparen && flag_lparen == 0)
                 return EXPECTED_ASSIGN;
@@ -111,7 +111,7 @@ private:
             if (lexem == PLUS || lexem == MINUS)
                 return EXPECTED_IDENTIFIER;
             pref = lexem;
-            if (lexem != CABS and lexem != ITOR) {
+            if (lexem != CABS and lexem != CMPLX) {
                 _son = _son->add(_son, EXPR);
                 _son = _son->add(_son, SEXPR);
                 _son = _son->add(_son, lexem);
@@ -126,7 +126,7 @@ private:
             }
         }
         else if (pref == ID || pref == REALDIG || pref == INTDIG) {
-            if (lexem == REALDIG || lexem == INTDIG || lexem == CABS || lexem == ITOR)
+            if (lexem == REALDIG || lexem == INTDIG || lexem == CABS || lexem == CMPLX)
                 return EXPECTED_SEPARATOR;
             if (lexem == ID)
                 return EXPECTED_ASSIGN;
@@ -149,7 +149,7 @@ private:
                 _son = _son->add(_son, _lexem);
                 return expression(_son->parent->parent->parent);
             }
-            else if (lexem == CABS || lexem == ITOR) {
+            else if (lexem == CABS || lexem == CMPLX) {
                 _son = _son->add(_son, EXPR);
                 _son = _son->add(_son, SEXPR);
                 _son = _son->add(_son, _lexem);
@@ -188,7 +188,7 @@ private:
                 return description(_son, _description);
             }
         }
-        if (lexem == PLUS || lexem == MINUS || lexem == ASSIGN || lexem == RPAREN || lexem == CABS || lexem == ITOR
+        if (lexem == PLUS || lexem == MINUS || lexem == ASSIGN || lexem == RPAREN || lexem == CABS || lexem == CMPLX
             || lexem == LPAREN) {
             return UNRECOGNIZED_STATEMENT;
         }

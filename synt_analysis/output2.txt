@@ -1,0 +1,107 @@
+PROGRAM
+ BEGIN
+  KEYWORD --> PROGRAM
+
+  ID
+   id --> f
+
+ DESCRIPTION
+  DESCR
+   TYPE
+    KEYWORD --> COMPLEX
+
+   VARLIST
+    ID
+     id --> a
+
+     APPERAND --> ,
+
+     VARLIST
+      ID
+       id --> b
+
+       APPERAND --> ,
+
+       VARLIST
+        ID
+         id --> c
+
+         APPERAND --> ,
+
+         VARLIST
+          ID
+           id --> d
+
+  DESCRIPTION
+   DESCR
+    TYPE
+     KEYWORD --> INTEGER
+
+    VARLIST
+     ID
+      id --> n
+
+ OPERATORS
+  OP
+   ID
+    id --> a
+
+   ASSIGN --> =
+
+   EXPR
+    SIMPLE EXPR
+     LPAREN --> (
+
+     EXPR
+      SIMPLE EXPR
+       COMPLEX NUM
+        COMPLEX NUM --> 1.59
+
+     RPAREN --> )
+
+  OPERATORS
+   OP
+    ID
+     id --> b
+
+    ASSIGN --> =
+
+    EXPR
+     SIMPLE EXPR
+      KEYWORD --> CMPLX
+
+      LPAREN --> (
+
+      EXPR
+       SIMPLE EXPR
+        COMPLEX NUM
+         COMPLEX NUM --> 2.3
+
+      RPAREN --> )
+
+   OPERATORS
+    OP
+     ID
+      id --> c
+
+     ASSIGN --> =
+
+     EXPR
+      SIMPLE EXPR
+       KEYWORD --> CABS
+
+       LPAREN --> (
+
+       EXPR
+        SIMPLE EXPR
+         INT NUM
+          INT NUM --> 9
+
+       RPAREN --> )
+
+ END
+  KEYWORD --> END
+
+  ID
+   id --> m
+

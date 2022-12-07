@@ -10,7 +10,7 @@
 #define INTEGER 2
 #define COMPLEX 3
 #define CABS 4
-#define ITOR 5
+#define CMPLX 5
 #define END 6
 
 #define LPAREN 11    /* ( */
@@ -222,11 +222,11 @@ int get_lexem(ifstream& fin, Checker& gg, Hash_table& gg_2, Element& el) {
             return CABS;
         }
 
-        if ("ITOR" == buffer) {
+        if ("CMPLX" == buffer) {
             Element a(buffer, "KEYWORD");
             gg_2.insert(a);
             el = a;
-            return ITOR;
+            return CMPLX;
         }
 
         if ("END" == buffer) {
@@ -257,13 +257,13 @@ int get_lexem(ifstream& fin, Checker& gg, Hash_table& gg_2, Element& el) {
         } while ((fin.get(ch) && (isalpha(ch) || isdigit(ch) || ch == '.') && ch != ' '));
         fin.putback(ch);
         string stat = gg.check_word(buffer);
-        if (stat == "realDig") {
+        if (stat == "complexNum") {
             Element a(buffer, "COMPLEX NUM");
             el = a;
             gg_2.insert(a);
             return REALDIG;
         }
-        else if (stat == "intDig") {
+        else if (stat == "intNum") {
             Element a(buffer, "INT NUM");
             el = a;
             gg_2.insert(a);
