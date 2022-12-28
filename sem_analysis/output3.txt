@@ -1,0 +1,7 @@
+PROGRAM f 2 FUNCTION 
+c a COMPLEX 3 DESCR 
+n d b INTEGER 4 DESCR 
+1.59 a = 
+5 3 - 2 + b = 
+9 CMPLX c = 
+END m 2 FUNCTION_END 

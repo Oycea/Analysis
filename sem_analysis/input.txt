@@ -1,0 +1,7 @@
+PROGRAM f
+COMPLEX a , c 
+INTEGER b , d, n
+a = (1.59)
+b = 2 + ( 3 - 5)
+c = CMPLX( 9 )
+END m

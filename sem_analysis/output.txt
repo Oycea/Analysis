@@ -1,0 +1,15 @@
+table[40] --> LPAREN ( 11
+table[41] --> RPAREN ) 12
+table[44] --> APPERAND , 19
+table[61] --> ASSIGN = 13
+table[97] --> id a 3
+table[98] --> id b 2
+table[99] --> id c 3
+table[100] --> id d 2
+table[102] --> id f 0
+table[109] --> id m 0
+table[110] --> id n 2
+table[8352] --> KEYWORD CMPLX 5
+table[13832] --> KEYWORD PROGRAM 7
+table[15606] --> KEYWORD INTEGER 2
+table[19136] --> KEYWORD COMPLEX 3
